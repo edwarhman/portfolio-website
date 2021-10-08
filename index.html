@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emerson Warhman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav id="nav-bar">
+    <ul id="nav-bar-buttons">
+      <li class="nav-link"><a href="#">hello</a></li>
+      <li class="nav-link"><a href="#">projects</a></li>
+      <li class="nav-link"><a href="#">about me</a></li>
+      <li class="nav-link"><a href="#">contact</a></li>
+    </ul>
+  </nav>
+
+  <h1>Test header here.</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tempora cupiditate minima ipsam tempore maxime commodi reprehenderit, consectetur corporis doloremque atque deleniti! Aliquid repellat velit molestias quis magni hic odit.</p>
+
+  <script>
+    const navLinks = [].slice.call(document.querySelectorAll('.nav-link'));
+
+    document.getElementById("nav-bar").addEventListener('click', e => {
+      const navLink = e.target.parentElement;
+      if ( navLinks.indexOf(navLink) >= 0) {
+        navLinks.forEach(el => {
+          el.classList.remove('active');
+        });
+        console.log(e.target.parentElement);  
+        e.target.parentElement.classList.add("active");
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>
