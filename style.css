@@ -1,0 +1,75 @@
+body {
+  font-size: 10px;
+  max-width: 800px;
+  margin: auto;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  font-family: "ubuntu condensed", sans-serif;
+}
+
+body *,
+body *::after,
+body *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* nav-bar styles */
+#nav-bar {
+  user-select: none;
+  color: black;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  height: 7vh;
+}
+
+#nav-bar-buttons {
+  display: flex;
+  /* width: 40%; */
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-link {
+  margin-right: 0.6em;
+  line-height: 2em;
+  height: 100%;
+  list-style: none;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color .3s ease-out;
+}
+.nav-link a {
+  display: flex;
+  align-items: center;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  border-bottom: 3px solid red;
+  height: 0.1em;
+  width: 100%;
+  bottom: 0.5em;
+  margin-left: -100%;
+  transition: margin-left 0.3s ease-out;
+}
+.nav-link:hover::before {
+  margin-left: 0;
+  transition: margin-left 0.3s ease-out;
+}
+
+.nav-link.active {
+  color: red;
+  transition: color .15s ease-out;
+}
+.nav-link.active::before {
+  /* margin-left: 0; */
+}
