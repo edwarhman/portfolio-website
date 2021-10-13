@@ -12,3 +12,6 @@ document.getElementById("nav-bar").addEventListener('click', e => {
   }
 })
 
+document.querySelector('h1').addEventListener('click', e => {
+  console.log(document.getElementById('projectsSection').offsetTop);
+})

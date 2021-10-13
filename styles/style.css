@@ -1,6 +1,7 @@
 body {
   font-size: 10px;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
   font-family: "ubuntu condensed", sans-serif;
 }
@@ -72,7 +73,72 @@ a {
   color: red;
   transition: color .15s ease-out;
 }
-.nav-link.active::before {
-  /* margin-left: 0; */
+
+/* Proyects Section */
+#projectsSection {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+}
+.project-article { 
+  background-color: palegreen;
+  width: 100%;
+  display: flex;
+  box-shadow: 1px 1px 5px gray, -1px -1px 5px gray;
+  border-radius: 4%;
+  position: relative;
+  overflow: hidden;
+}
+.project-article > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.project-article::before {
+  content: "";
+  display: block;
+  padding-top: 80%;
+}
+.project-image {
+  max-height: 100%;
+  width: 100%;
+}
+.description-container {
+  height: 100%;
+  width: 100%;
 }
 
+.project-description {
+  user-select: none;
+  margin-top: 100%;
+  transition: margin-top .5s ease-out;
+  font-size: 1.7em;
+  color: white;
+  
+  background-color: rgba(55, 55, 55, 0.7);
+  backdrop-filter: blur(2px);
+  height: 100%;
+  padding: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.description-container:hover > * {
+  margin-top: 0;
+  transition: margin-top .5 ease-out;
+}
+.project-description button {
+  padding: .4rem;
+  font-size: 1.1em;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+.project-description button:hover {
+  background-color: white;
+  color: black;
+}
