@@ -77,6 +77,19 @@ a {
 /* Proyects Section */
 #projectsSection {
   margin-top: 20px;
+  font-size: 1.2rem;
+  }
+#projectsSection .title {
+  text-align: center;
+  margin-top: 2.5em;
+}
+#projectsSection .description {
+  text-align: center;
+  margin-top: .6em;
+}
+.projects.container {
+  padding: 0 1rem 0 1rem;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5%;
@@ -113,7 +126,7 @@ a {
   user-select: none;
   margin-top: 100%;
   transition: margin-top .5s ease-out;
-  font-size: 1.7em;
+  /*font-size: 1.7em;*/
   color: white;
   
   background-color: rgba(55, 55, 55, 0.7);
