@@ -1,100 +1,190 @@
-body {
-  font-size: 10px;
-  width: 100%;
-  max-width: 1000px;
-  margin: auto;
-  font-family: "ubuntu condensed", sans-serif;
+/* Custom properties / variables */
+:root {
+  --main-color: red;
+  --aux-color: gold;
+  --bg-color: gray;
+  --main-font-color: black;
+  --aux-font-color: white;
 }
 
-body *,
-body *::after,
-body *::before {
-  padding: 0;
+/* base reset */
+* {
   margin: 0;
-  box-sizing: border-box;
+  padding: 0;
 }
+
+/* box sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10px */
+  scroll-behavior: smooth;
+}
+
+/* different screen font sizes media queries */
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-family: "ubuntu condensed", sans-serif;
+  font-size: 1.8rem;
+  color: var(--main-font-color);
+  padding: 0 1rem;
+  margin: auto;
+}
+
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+img {
+  max-height: 100%;
+  width: 100%;
+}
+/* Components */
+
+.subtitle {
+  color: var(--main-color);
+  font-style: italic;
+}
+.no-bullet {
+  list-style: none;
+}
+
+.button {
+  cursor: pointer;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+/* website font sizes */
+.small-font {
+  font-size: .85rem;
+}
+.medium-font {
+  font-size: 2.3rem;
+}
+.big-font {
+  font-size: 3.5rem;
+}
+.huge-font {
+  font-size: 8rem;
+}
+
+
 /* nav-bar styles */
-#nav-bar {
+.nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
   user-select: none;
-  color: black;
-  font-size: 1.4rem;
+  background-color: var(--aux-font-color);
   font-weight: bold;
-  display: flex;
-  justify-content: end;
   height: 5vh;
 }
 
-#nav-bar-buttons {
+.nav__links {
   display: flex;
   /* width: 40%; */
   align-items: center;
   justify-content: space-around;
 }
 
+@media (min-width: 25.85em) {
+  .nav__links {
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    margin-right: 2.5rem;
+  }
+}
+
 .nav-link {
-  margin-right: 0.6em;
   line-height: 2em;
-  height: 100%;
-  list-style: none;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
   transition: color .3s ease-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.nav-link a {
-  display: flex;
-  align-items: center;
-}
+
 .nav-link::before {
   content: "";
   position: absolute;
-  border-bottom: 3px solid red;
+  border-bottom: 3px solid var(--main-color);
   height: 0.1em;
   width: 100%;
   bottom: 0.2em;
-  margin-left: -200%;
-  transition: margin-left 0.3s ease-out;
+  left: -100%;
+  transition: left 0.3s ease-out;
 }
 .nav-link:hover::before {
-  margin-left: 0;
-  transition: margin-left 0.3s ease-out;
+  left: 0;
+  transition: left 0.3s ease-out;
 }
-
 .nav-link.active {
   color: red;
   transition: color .15s ease-out;
 }
 
+/* website sections */
+.main-section {
+  padding-top: 5vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Welcome section */
+#welcome-section {
+}
+
+.introduction__container {
+  text-align: center;
+}
+
 /* Proyects Section */
-#projectsSection {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  }
+
 #projectsSection .title {
   text-align: center;
-  margin-top: 2.5em;
 }
-#projectsSection .description {
-  text-align: center;
-  margin-top: .6em;
-}
+
 .projects.container {
-  padding: 0 1rem 0 1rem;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 2rem 0 2rem;
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 5%;
 }
-.project-article { 
+
+.project-card { 
   background-color: palegreen;
   width: 100%;
   display: flex;
@@ -103,20 +193,18 @@ a {
   position: relative;
   overflow: hidden;
 }
-.project-article > * {
+.project-card > * {
   position: absolute;
   top: 0;
   left: 0;
 }
-.project-article::before {
+/* make a rectangular container */
+.project-card::before {
   content: "";
   display: block;
   padding-top: 80%;
 }
-.project-image {
-  max-height: 100%;
-  width: 100%;
-}
+
 .description-container {
   height: 100%;
   width: 100%;
@@ -124,9 +212,9 @@ a {
 
 .project-description {
   user-select: none;
-  margin-top: 100%;
-  transition: margin-top .5s ease-out;
-  /*font-size: 1.7em;*/
+  position: absolute;
+  top: 100%;
+  transition: top .5s ease-out;
   color: white;
   
   background-color: rgba(55, 55, 55, 0.7);
@@ -140,18 +228,45 @@ a {
   justify-content: space-around;
 }
 .description-container:hover > * {
-  margin-top: 0;
-  transition: margin-top .5 ease-out;
+  top: 0;
+  transition: top .5 ease-out;
 }
-.project-description button {
-  padding: .4rem;
-  font-size: 1.1em;
+
+.project-description .button {
   background-color: transparent;
   border: 1px solid white;
   color: white;
-  cursor: pointer;
 }
-.project-description button:hover {
+.project-description .button:hover {
   background-color: white;
   color: black;
 }
+
+/* contact section */
+
+@media (min-width: 75em) {
+  #contact-section .huge-font {
+    font-size: 12rem;
+    margin-top: 4rem;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+#contact-button {
+  padding: 1.15em 2em;
+  margin-top: 4rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.fab:hover {
+  color: red;
+}
+

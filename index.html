@@ -6,71 +6,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emerson Warhman</title>
-    <link rel="stylesheet" href="./styles/normalize.css">
+    <script src="https://kit.fontawesome.com/9fc33c5ba3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
   </head>
 
   <body>
-    <nav id="nav-bar">
-      <ul id="nav-bar-buttons">
+    <nav id="nav-bar" class="nav">
+      <ul class="no-bullet nav__links">
         <li class="nav-link"><a href="#">hello</a></li>
-        <li class="nav-link"><a href="#">projects</a></li>
-        <li class="nav-link"><a href="#">about me</a></li>
-        <li class="nav-link"><a href="#">contact</a></li>
+        <li class="nav-link"><a href="#projectsSection">projects</a></li>
+        <li class="nav-link"><a href="#contact-section">contact</a></li>
       </ul>
     </nav>
-
-    <h1>Test header here.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tempora cupiditate minima ipsam tempore maxime commodi reprehenderit, consectetur corporis doloremque atque deleniti! Aliquid repellat velit molestias quis magni hic odit.</p>
-    <section id="projectsSection">
-      <h2 class="title">My projects</h2>
-      <p class="description">Take a look at the projects I've worked recently using HTML, CSS and JavaScript.</p>
-
-      <div class="projects container">
-      <div class="project-article">
-        <img class="project-image" src="images/calculator.png" alt="">
-        <div class="description-container">
-
-          <section class="project-description">
-            <h2>Js Calculator</h2>
-            <p>
-              A simple calculator for the web. Do your calculations quickly.
-            </p>
-            <button>view project</button>
-          </section>
-        </div>
-      </div>
-
-      <div class="project-article">
-        <img class="project-image" src="images/guess-the-number.png" alt="">
-        <div class="description-container">
-
-          <section class="project-description">
-            <h2>Guess The Number</h2>
-            <p>
-              Can you guess the number before you run out of turns? Try it!
-            </p>
-            <button>view project</button>
-          </section>
-        </div>
-      </div>
-
-      <div class="project-article">
-        <img class="project-image" src="./images/tic-tac-toe.png" alt="">
-        <div class="description-container">
-
-          <section class="project-description">
-            <h2>Tic Tac Toe Game</h2>
-            <p>
-              Multiplayer tic tac toe game for the web. Have a funny time with your friends.
-            </p>
-            <button>view project</button>
-          </section>
-        </div>
-      </div>
+    <section id="welcome-section" class="main-section welcome">
+      <div class="introduction__container">
+        <h1 class="huge-font">Hello! My name is Emerson Warhman</h1>
+        <p class="subtitle medium-font">I'm a Front-end web developer</p>
       </div>
     </section>
+    <section id="projectsSection" class="main-section">
+      <h2 class="big-font">My projects</h2>
+      <p> Take a look at the projects I've worked recently using HTML, CSS and JavaScript.</p>
 
+      <div class="projects container medium-font">
+        <div class="project-card">
+          <img class="project-image" src="images/calculator.png" alt="">
+          <div class="description-container">
+
+            <section class="project-description">
+              <h2>Js Calculator</h2>
+              <p>
+                A simple calculator for the web. Do your calculations quickly.
+              </p>
+              <button class="button"><a href="https://codepen.io/edwarhman/full/yLoNNbY" target="_blank">view project</a></button>
+            </section>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-image" src="images/guess-the-number.png" alt="">
+          <div class="description-container">
+
+            <section class="project-description">
+              <h2>Guess The Number</h2>
+              <p>
+                Can you guess the number before you run out of turns? Try it!
+              </p>
+              <button class="button"> <a href="https://codepen.io/edwarhman/full/wvgwavX" target="_blank">view project</a></button>
+            </section>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-image" src="./images/tic-tac-toe.png" alt="">
+          <div class="description-container">
+
+            <section class="project-description">
+              <h2>Tic Tac Toe Game</h2>
+              <p>
+                Multiplayer tic tac toe game for the web. Have a funny time with your friends.
+              </p>
+              <button class="button"><a href="https://codepen.io/edwarhman/full/VwWEbzO" target="_blank">view project</a></button>
+            </section>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-image" src="./images/javascript-documentation-2.png" alt="">
+          <div class="description-container">
+
+            <section class="project-description">
+              <h2>JavaScript Documentation Page</h2>
+              <p>
+                Multiplayer tic tac toe game for the web. Have a funny time with your friends.
+              </p>
+              <button class="button"><a href="https://codepen.io/edwarhman/full/XWpzRrK" target="_blank">view project</a></button>
+            </section>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-image" src="./images/tribute-page.png" alt="">
+          <div class="description-container">
+
+            <section class="project-description">
+              <h2>Dr. Norman Borlaug Tribute page</h2>
+              <p>
+                Multiplayer tic tac toe game for the web. Have a funny time with your friends.
+              </p>
+              <button class="button"><a href="https://codepen.io/edwarhman/full/JjbrmYY" target="_blank">view project</a></button>
+            </section>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-image" src="./images/survey-form.png" alt="">
+          <div class="description-container">
+
+            <section class="project-description">
+              <h2>Survey Form</h2>
+              <p>
+                Multiplayer tic tac toe game for the web. Have a funny time with your friends.
+              </p>
+              <button class="button"><a href="https://codepen.io/edwarhman/full/QWGqRYR" target="_blank">view project</a></button>
+            </section>
+          </div>
+        </div>
+      </div>
+      <button class="button"><a href="#">See more</a></button>
+    </section>
+    <section id="contact-section" class="main-section">
+      <h2 class="huge-font title">Let's work together</h2>
+      <button class="button" id="contact-button" >Email me</button>
+      <div class="contact-links__container">
+        <p class="description">You can also reach me on:</p>
+        <ul class="no-bullet contact-links big-font" >
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fab fa-github"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+      </div>
+    </section>
     <script src="./scripts.js"></script>
   </body>
 
