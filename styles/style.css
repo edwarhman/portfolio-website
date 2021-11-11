@@ -170,18 +170,15 @@ img {
 
 /* Proyects Section */
 
-#projectsSection .title {
-  text-align: center;
-}
-
 .projects.container {
   width: 100%;
   max-width: 1280px;
+  margin-bottom: 3rem;
   padding: 0 2rem 0 2rem;
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 5%;
+  gap: 4vh;
 }
 
 .project-card { 
@@ -202,7 +199,7 @@ img {
 .project-card::before {
   content: "";
   display: block;
-  padding-top: 80%;
+  padding-top: 78%;
 }
 
 .description-container {
@@ -213,13 +210,14 @@ img {
 .project-description {
   user-select: none;
   position: absolute;
-  top: 100%;
-  transition: top .5s ease-out;
+  left: 100%;
+  transition: left .5s ease-out;
   color: white;
   
   background-color: rgba(55, 55, 55, 0.7);
   backdrop-filter: blur(2px);
   height: 100%;
+  width: 100%;
   padding: 5%;
 
   display: flex;
@@ -228,8 +226,8 @@ img {
   justify-content: space-around;
 }
 .description-container:hover > * {
-  top: 0;
-  transition: top .5 ease-out;
+  left: 0;
+  transition: left .5 ease-out;
 }
 
 .project-description .button {
@@ -253,10 +251,11 @@ img {
 
 .title {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 #contact-button {
-  padding: 1.15em 2em;
+  padding: 1.15em 1em;
   margin-top: 4rem;
 }
 
