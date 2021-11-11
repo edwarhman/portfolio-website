@@ -1,0 +1,106 @@
+/* custom properties / variables */
+:root {
+  --main-color: red;
+  --aux-color: gold;
+  --bg-color: gray;
+  --main-font-color: black;
+  --aux-font-color: white;
+}
+
+/* base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size:  62.5%; /* 10px */
+  scroll-behavior: smooth;
+}
+
+/* different screen font sizes media queries */
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-family: "ubuntu condensed", sans-serif;
+  font-size: 1.8rem;
+  color: var(--main-font-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Components */
+
+.subtitle {
+  color: var(--main-color);
+  font-style: italic;
+}
+.no-bullet {
+  list-style: none;
+}
+.no-selectable {
+  user-select: none;
+}
+
+/* website font sizes */
+.small-font {
+  font-size: .85rem;
+}
+.big-font {
+  font-size: 3.5rem;
+}
+.huge-font {
+  font-size: 6rem;
+}
+
+/* nav-bar styles */
+.nav {
+  position: fixed;
+  width: 100%;
+  background-color: var(--aux-font-color);
+  font-weight: bold;
+  height: 5vh;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (min-width: 29rem) {
+  .nav__links {
+    justify-content: flex-end;
+  }
+  .nav-link {
+    margin-right: 2.5rem;
+  }
+}
