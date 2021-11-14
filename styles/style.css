@@ -225,9 +225,17 @@ img {
   align-items: center;
   justify-content: space-around;
 }
+
+.project-description.showed {
+  left: 0;
+  transition: left .5 ease-out;
+}
+
+@media (min-width: 75em) {
 .description-container:hover > * {
   left: 0;
   transition: left .5 ease-out;
+}
 }
 
 .project-description .button {
