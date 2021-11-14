@@ -1,5 +1,5 @@
 const navLinks = [].slice.call(document.querySelectorAll('.nav-link'));
-
+let projectsCards = Array.from(document.querySelectorAll('.project-card'));
 
 document.getElementById("nav-bar").addEventListener('click', e => {
   const navLink = e.target.parentElement;
@@ -27,7 +27,6 @@ function isElementInRange(el, top, bottom, left, right) {
   )
 }
 
-let projectsCards = Array.from(document.querySelectorAll('.project-card'));
 
 const mouseover = new MouseEvent('mouseover', {
   'view': window,
@@ -48,4 +47,6 @@ document.addEventListener('scroll', ()=> {
 
     });
   }
+
+
 });
