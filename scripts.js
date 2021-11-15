@@ -1,14 +1,26 @@
 const navLinks = [].slice.call(document.querySelectorAll('.nav-link'));
 const projectsCards = Array.from(document.querySelectorAll('.project-card'));
 const navBar = document.getElementById('nav-bar');
+const sections = Array.from(document.querySelectorAll('.main-section'));
 
-function isElementInRange(el, top, bottom, left, right) {
+function isElementInRange(el, strict, top, bottom, left, right) {
   const rect = el.getBoundingClientRect();
+  if (strict) {
+    return (
+      rect.top >= top &&
+      rect.bottom <= bottom &&
+      (left === undefined || rect.left >= left) &&
+      (right === undefined || rect.right <= right)
+    )
+  }
+
   return (
-    rect.top >= top &&
-    rect.bottom <= bottom &&
-    (left === undefined || rect.left >= left) &&
-    (right === undefined || rect.right <= right)
+    (top >= rect.top && bottom <= rect.bottom) ||
+    (rect.top >= top && rect.top <= bottom) ||
+    (rect.bottom >= top && rect.bottom <= bottom) ||
+    (left >= rect.bottom && right <= rect.right) ||
+    (rect.left >= left && rect.left <= right) ||
+    (rect.right >= left && rect.right <= right)
   )
 }
 
@@ -25,9 +37,9 @@ document.addEventListener('click', e => {
 
 document.addEventListener('scroll', ()=> {
   if (document.documentElement.clientWidth < 460) {
-    const rect = projectsCards[0].getBoundingClientRect();
+    const cardRect = projectsCards[0].getBoundingClientRect();
     projectsCards.forEach((card) => {
-      if (isElementInRange(card, 0, rect.height * 2.5)) {
+      if (isElementInRange(card, true, 0, cardRect.height * 2.5)) {
         console.log(`card ${card} is in range`);
         card.lastElementChild.firstElementChild.classList.add('showed');
       } else {
@@ -37,5 +49,9 @@ document.addEventListener('scroll', ()=> {
     });
   }
 
-
+  sections.forEach(section => {
+    if(isElementInRange(section, false, 0, window.innerHeight * 0.25)) {
+      console.log(`current section:`, section);
+    }
+  });
 });
