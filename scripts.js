@@ -49,9 +49,10 @@ document.addEventListener('scroll', ()=> {
     });
   }
 
-  sections.forEach(section => {
-    if(isElementInRange(section, false, 0, window.innerHeight * 0.25)) {
-      console.log(`current section:`, section);
+  sections.forEach((section, index) => {
+    if(isElementInRange(section, false, window.innerHeight * 0.3, window.innerHeight * 0.5)) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
     }
   });
 });
