@@ -78,6 +78,18 @@ img {
   cursor: pointer;
   padding: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid var(--main-color);
+  background-color: var(--aux-font-color);
+}
+
+button:hover {
+  color: var(--main-color);
+}
+
+button:active {
+  background-color: rgba(55, 55, 55, 0.1);
+  color: var(--aux-font-color);
 }
 
 /* website font sizes */
@@ -161,8 +173,6 @@ img {
 }
 
 /* Welcome section */
-#welcome-section {
-}
 
 .introduction__container {
   text-align: center;
@@ -246,6 +256,10 @@ img {
 .project-description .button:hover {
   background-color: white;
   color: black;
+}
+
+#projectsSection .button {
+  margin-bottom: 1em;
 }
 
 /* contact section */
