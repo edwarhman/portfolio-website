@@ -1,6 +1,6 @@
 const navLinks = [].slice.call(document.querySelectorAll('.nav-link'));
-const projectsCards = Array.from(document.querySelectorAll('.project-card'));
-const navBar = document.getElementById('nav-bar');
+const projectsCards = Array.from(document.querySelectorAll('.project-tile'));
+const navBar = document.getElementById('navbar');
 const sections = Array.from(document.querySelectorAll('.main-section'));
 
 function isElementInRange(el, strict, top, bottom, left, right) {

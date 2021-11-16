@@ -107,7 +107,7 @@ button:active {
 }
 
 
-/* nav-bar styles */
+/* navbar styles */
 .nav {
   position: fixed;
   z-index: 100;
@@ -191,7 +191,7 @@ button:active {
   gap: 4vh;
 }
 
-.project-card { 
+.project-tile { 
   background-color: palegreen;
   width: 100%;
   display: flex;
@@ -200,13 +200,13 @@ button:active {
   position: relative;
   overflow: hidden;
 }
-.project-card > * {
+.project-tile > * {
   position: absolute;
   top: 0;
   left: 0;
 }
 /* make a rectangular container */
-.project-card::before {
+.project-tile::before {
   content: "";
   display: block;
   padding-top: 78%;
@@ -258,7 +258,7 @@ button:active {
   color: black;
 }
 
-#projectsSection .button {
+#projects .button {
   margin-bottom: 1em;
 }
 
