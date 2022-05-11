@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Emerson Warhman Front-end Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "format": "pretty-quick --staged"
+  },
+  "repository": "https://github.com/edwarhman/portfolio-website",
+  "author": "edwarhman <edwarhman@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^8.15.0",
+    "prettier": "^2.6.2",
+    "pretty-quick": "^3.1.3"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1"
+  }
+}

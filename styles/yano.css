@@ -22,7 +22,7 @@
 
 html {
   box-sizing: border-box;
-  font-size:  62.5%; /* 10px */
+  font-size: 62.5%; /* 10px */
   scroll-behavior: smooth;
 }
 
@@ -72,7 +72,7 @@ a {
 
 /* website font sizes */
 .small-font {
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 .big-font {
   font-size: 3.5rem;
