@@ -2,6 +2,9 @@ const navLinks = [].slice.call(document.querySelectorAll(".nav-link"));
 const projectsCards = Array.from(document.querySelectorAll(".project-card"));
 const navBar = document.getElementById("nav-bar");
 const sections = Array.from(document.querySelectorAll(".main-section"));
+const contactBtn = document.getElementById("contact-button");
+const emailForm = document.getElementById("emailForm");
+const closeModalBtn = document.getElementById("closeModalBtn");
 
 function isElementInRange(el, strict, top, bottom, left, right) {
   const rect = el.getBoundingClientRect();
@@ -61,4 +64,12 @@ document.addEventListener("scroll", () => {
       navLinks[index].classList.add("active");
     }
   });
+});
+
+contactBtn.addEventListener("click", () => {
+  emailForm.showModal();
+});
+
+closeModalBtn.addEventListener("click", () => {
+  emailForm.close();
 });
