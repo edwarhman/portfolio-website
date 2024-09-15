@@ -1,16 +1,16 @@
 ---
+import Navigation from '@/components/Navigation.astro';
 import Layout from '../layouts/Layout.astro';
+import NavItem from '@/components/NavItem.astro';
 ---
 
 <Layout title="Emerson Warhman Portfolio">
 	
-    <nav id="nav-bar" class="nav">
-      <ul class="no-bullet nav__links">
-        <li class="nav-link active"><a href="#">hello</a></li>
-        <li class="nav-link"><a href="#projectsSection">projects</a></li>
-        <li class="nav-link"><a href="#contact-section">contact</a></li>
-      </ul>
-    </nav>
+	<Navigation id="nav-bar">
+		<NavItem href="#" active>hello</NavItem>
+        <NavItem href="#projectsSection">projects</NavItem>
+        <NavItem href="#contact-section">contact</NavItem>
+	</Navigation>
     <section id="welcome-section" class="main-section welcome">
       <div class="introduction__container">
         <h1 class="huge-font">Hello! My name is Emerson Warhman</h1>

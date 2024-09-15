@@ -1,0 +1,9 @@
+---
+const { id } = Astro.props;
+---
+
+<nav id={id} class="nav">
+      <ul class="no-bullet nav__links">
+        <slot />
+      </ul>
+</nav>
