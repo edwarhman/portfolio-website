@@ -9,15 +9,19 @@ import About from '@/components/sections/About.astro';
 ---
 
 <Layout title="Emerson Warhman Portfolio">
-	<Navigation id="nav-bar">
-		<NavItem href="#" active>hello</NavItem>
-        <NavItem href="#projectsSection">projects</NavItem>
-        <NavItem href="#contact-section">contact</NavItem>
-	</Navigation>
-	<About />
-    <Projects />
-    <Contact />
-    <ContactModal />
+	<header>
+		<Navigation id="nav-bar">
+			<NavItem href="#" active>hello</NavItem>
+			<NavItem href="#projectsSection">projects</NavItem>
+			<NavItem href="#contact-section">contact</NavItem>
+		</Navigation>
+	</header>
+	<main>
+		<About />
+		<Projects />
+		<Contact />
+		<ContactModal />
+	</main>
 
 	<script>
 		const navLinks = [].slice.call(document.querySelectorAll(".nav-link"));
