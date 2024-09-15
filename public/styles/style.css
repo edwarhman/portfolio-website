@@ -22,7 +22,8 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* 10px */
+  font-size: 62.5%;
+  /* 10px */
   scroll-behavior: smooth;
 }
 
@@ -33,12 +34,14 @@ html {
     font-size: 60%;
   }
 }
+
 /* 980px / 16px = 61.25em */
 @media (max-width: 61.25em) {
   html {
     font-size: 58%;
   }
 }
+
 /* 460px / 16px = 28.75em */
 @media (max-width: 28.75em) {
   html {
@@ -63,12 +66,14 @@ img {
   max-height: 100%;
   width: 100%;
 }
+
 /* Components */
 
 .subtitle {
   color: var(--main-color);
   font-style: italic;
 }
+
 .no-bullet {
   list-style: none;
 }
@@ -95,12 +100,15 @@ button:active {
 .small-font {
   font-size: 0.85rem;
 }
+
 .medium-font {
   font-size: 2.3rem;
 }
+
 .big-font {
   font-size: 3.5rem;
 }
+
 .huge-font {
   font-size: 8rem;
 }
@@ -118,7 +126,6 @@ button:active {
 
 .nav__links {
   display: flex;
-  /* width: 40%; */
   align-items: center;
   justify-content: space-around;
 }
@@ -151,10 +158,12 @@ button:active {
   left: -100%;
   transition: left 0.3s ease-out;
 }
+
 .nav-link:hover::before {
   left: 0;
   transition: left 0.3s ease-out;
 }
+
 .nav-link.active {
   color: red;
   transition: color 0.15s ease-out;
@@ -198,11 +207,13 @@ button:active {
   position: relative;
   overflow: hidden;
 }
-.project-card > * {
+
+.project-card>* {
   position: absolute;
   top: 0;
   left: 0;
 }
+
 /* make a rectangular container */
 .project-card::before {
   content: "";
@@ -240,7 +251,7 @@ button:active {
 }
 
 @media (min-width: 75em) {
-  .description-container:hover > * {
+  .description-container:hover>* {
     left: 0;
     transition: left 0.5 ease-out;
   }
@@ -251,6 +262,7 @@ button:active {
   border: 1px solid white;
   color: white;
 }
+
 .project-description .button:hover {
   background-color: white;
   color: black;
