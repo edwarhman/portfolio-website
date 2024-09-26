@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
+import Contact from '../components/contact.astro'
 ---
 
 <Layout title="Emerson Warhman Portfolio">
@@ -157,88 +158,11 @@ import Header from '../components/header.astro';
         <a href="https://codepen.io/edwarhman" target="_blank">See more</a>
       </button>
     </section>
-    <section id="contact-section" class="main-section">
-      <h2 class="huge-font title">Let's work together</h2>
-      <button class="button big-font" id="contact-button">Email me</button>
-      <div class="contact-links__container">
-        <p class="description">You can also reach me on:</p>
-        <ul class="no-bullet contact-links big-font">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/emersonwarhman/"
-              target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://github.com/edwarhman" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/edwarhman" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <dialog id="emailForm">
-      <div class="form-content">
-        <span id="closeModalBtn" class="big-font">X</span>
-        <form id="contact-email-form" method="POST" netlify>
-          <div class="fcf-form-group">
-            <label for="Name" class="fcf-label">Your name</label>
-            <div class="fcf-input-group">
-              <input
-                type="text"
-                id="Name"
-                name="Name"
-                class="fcf-form-control"
-                required
-              />
-            </div>
-          </div>
-          <div class="fcf-form-group">
-            <label for="Email" class="fcf-label">Your email address</label>
-            <div class="fcf-input-group">
-              <input
-                type="email"
-                id="Email"
-                name="Email"
-                class="fcf-form-control"
-                required
-              />
-            </div>
-          </div>
-          <div class="fcf-form-group">
-            <label for="Message" class="fcf-label">Your message</label>
-            <div class="fcf-input-group">
-              <textarea
-                id="Message"
-                name="Message"
-                class="fcf-form-control"
-                rows="6"
-                maxlength="3000"
-                required
-              ></textarea>
-            </div>
-          </div>
-          <div class="fcf-form-group btn-container">
-            <button type="submit" id="submitButton" class="button medium-font">
-              Send Message
-            </button>
-          </div>
-        </form>
-      </div>
-    </dialog>
+    <Contact />
 	<script>
 		const navLinks = [].slice.call(document.querySelectorAll(".nav-link"));
 		const projectsCards = Array.from(document.querySelectorAll(".project-card"));
 		const sections = Array.from(document.querySelectorAll(".main-section"));
-		const contactBtn = document.getElementById("contact-button");
-		const emailForm = document.getElementById("emailForm");
-		const closeModalBtn = document.getElementById("closeModalBtn");
 
 		function isElementInRange(el, strict, top, bottom, left, right) {
 		const rect = el.getBoundingClientRect();
@@ -300,12 +224,5 @@ import Header from '../components/header.astro';
 		});
 		});
 
-		contactBtn.addEventListener("click", () => {
-		emailForm.showModal();
-		});
-
-		closeModalBtn.addEventListener("click", () => {
-		emailForm.close();
-		});
 	</script>
 </Layout>

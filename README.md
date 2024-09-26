@@ -8,5 +8,5 @@ TODO
   [] agregar imagen de perfil
   [] agregar informacion
 [] seccion experiencia
-[] seccion about
+[] seccion contact
 
