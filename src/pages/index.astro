@@ -1,19 +1,14 @@
 ---
-import Navigation from '@/components/Navigation.astro';
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/header.astro';
-import Contact from '../components/contact.astro'
-import Projects from '../components/projects.astro'
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/header.astro';
+import Contact from '@/components/sections/Contact.astro';
+import Projects from '@/components/sections/Projects.astro';
+import About from '@/components/sections/About.astro';
 ---
 
 <Layout title="Emerson Warhman Portfolio">
-	  <Header />
-    <section id="welcome-section" class="main-section welcome">
-      <div class="introduction__container">
-        <h1 class="huge-font">Hello! My name is Emerson Warhman</h1>
-        <p class="subtitle medium-font">I'm a Front-end web developer</p>
-      </div>
-    </section>
+	<Header />
+	<About />
     <Projects />
     <Contact />
 	<script>
