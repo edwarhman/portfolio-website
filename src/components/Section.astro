@@ -1,0 +1,21 @@
+---
+export interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+
+<section id={id} class="main-section">
+    <slot />
+</section>
+<style>
+/* website sections */
+.main-section {
+  padding-top: 5vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+</style>
