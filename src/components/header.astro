@@ -1,7 +1,7 @@
 
 <nav id="nav-bar" class="nav">
   <ul class="no-bullet nav__links">
-    <li class="nav-link active"><a href="#">hello</a></li>
+    <li class="nav-link active"><a href="#">about me</a></li>
     <li class="nav-link"><a href="#projectsSection">projects</a></li>
     <li class="nav-link"><a href="#contact-section">contact</a></li>
   </ul>
@@ -17,7 +17,7 @@
   user-select: none;
   background-color: var(--aux-font-color);
   font-weight: bold;
-  height: 5vh;
+  padding: 1rem 0;
 }
 
 .nav__links {
@@ -28,7 +28,8 @@
 
 @media (min-width: 25.85em) {
   .nav__links {
-    justify-content: flex-end;
+    justify-content: center;
+    gap: 2rem;
   }
 
   .nav-link {
