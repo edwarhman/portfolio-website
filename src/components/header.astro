@@ -1,0 +1,84 @@
+
+<nav id="nav-bar" class="nav">
+  <ul class="no-bullet nav__links">
+    <li class="nav-link active"><a href="#">hello</a></li>
+    <li class="nav-link"><a href="#projectsSection">projects</a></li>
+    <li class="nav-link"><a href="#contact-section">contact</a></li>
+  </ul>
+</nav>
+
+<style>
+
+/* nav-bar styles */
+.nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  user-select: none;
+  background-color: var(--aux-font-color);
+  font-weight: bold;
+  height: 5vh;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (min-width: 25.85em) {
+  .nav__links {
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    margin-right: 2.5rem;
+  }
+}
+
+.nav-link {
+  line-height: 2em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-out;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  border-bottom: 3px solid var(--main-color);
+  height: 0.1em;
+  width: 100%;
+  bottom: 0.2em;
+  left: -100%;
+  transition: left 0.3s ease-out;
+}
+
+.nav-link:hover::before {
+  left: 0;
+  transition: left 0.3s ease-out;
+}
+
+.nav-link.active {
+  color: red;
+  transition: color 0.15s ease-out;
+}
+
+nav {
+  background: transparent;
+  animation: blur linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
+}
+
+@keyframes blur {
+  to {
+  box-shadow:
+    0 5px 50px -5px hsla(0, 0, 100%, 0.2),
+    0 0 0 1 transparent;
+  backdrop-filter: blur(10px);
+  background: rgba(225,225,225, 0.1);
+}
+}
+</style>
