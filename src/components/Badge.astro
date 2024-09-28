@@ -1,0 +1,35 @@
+---
+export interface Props {
+    text: string
+}
+const icons = await Astro.glob('/src/assets/technology-icons/*.astro') 
+console.log({icons, url: icons[0].file})
+
+const icon = icons.find(key => key.file.includes(Astro.props.text))
+console.log({iconKey: icon})
+
+if(!icon) {
+    throw new Error(`Icon ${Astro.props.text} not found`)
+}
+
+const Icon = icon.default
+
+---
+
+<span class="badge small-font"><span class="badge-inner"><Icon width="16" height="16" stroke="currentColor"/>{Astro.props.text}</span></span>
+
+<style>
+    .badge {
+        display: inline-block;
+        background-color: var(--secondary-font-color);
+        color: var(--aux-font-color);
+        font-weight: bold;
+        padding: 0.50rem 0.6rem;
+        border-radius: 0.4rem;
+    }
+    .badge-inner {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+</style>
