@@ -5,8 +5,8 @@ export interface Props {
 }
 
 const { experience } = Astro.props
-const startDate = getDisplayDate(experience.startDate)
-const endDate = getDisplayDate(experience.endDate)
+const startDate = getDisplayDate(experience.data.startDate)
+const endDate = getDisplayDate(experience.data.endDate)
 
 function getDisplayDate(dateString: string) {
   const year = new Date(dateString).getUTCFullYear()
@@ -16,8 +16,8 @@ function getDisplayDate(dateString: string) {
 ---
 <li>
   <em>{startDate} - {endDate}</em>
-  <h3> {experience.position} at <a href={experience.companyUrl} target="_blank">{experience.companyName}</a></h3>
-  <p>{experience.details}</p>
+  <h3> {experience.data.position} at <a href={experience.data.companyUrl} target="_blank">{experience.data.companyName}</a></h3>
+  <p>{experience.data.details}</p>
 </li>
 
 <style>

@@ -7,14 +7,16 @@ console.log({allExperience})
 ---
 
 <Section id='experience-section'>
-      <h2 class="big-font title">Experience</h2>
-      <ol>
-    {allExperience.map(({data})=> (
-        <ExperienceItem experience={data} />
-    ))}
-      </ol>
-      
+  <h2 class="big-font title">Experience</h2>
+  <ol>
+    {
+      allExperience.map((experience)=> (
+        <ExperienceItem experience={experience} />
+      ))
+    }
+  </ol>
 </Section>
+
 <style>
   ol {
     border-left: 5px solid red;
