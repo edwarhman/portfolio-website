@@ -13,7 +13,7 @@
     - [] que cada proyecto tenga un link a su repo y sitio web
     - [] tecnologias usadas en cada proyecto
     - [] cambiar layout articulos
-- [] añadir sección de experiencia
+- [x] añadir sección de experiencia
 - [] about
     - [] agregar foto de perfil
     - [] agregar bio

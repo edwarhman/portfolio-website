@@ -1,0 +1,107 @@
+---
+import type { CollectionEntry } from 'astro:content'
+export interface Props {
+  project: CollectionEntry<"projects">
+}
+
+const { project } = Astro.props
+const { Content } = await project.render()
+---
+<div class="project-card">
+    <img
+    class="project-image"
+    src={project.data.image}
+    alt={project.data.title + "project image"}
+    />
+    <div class="description-container">
+    <section class="project-description">
+        <h2>{project.data.title}</h2>
+        <p>
+            <Content/>
+        </p>
+        <button class="button">
+        <a
+            href={project.data.demoUrl}
+            target="_blank"
+            >view project</a
+        >
+        </button>
+    </section>
+    </div>
+</div>
+
+<style>
+.project-card {
+  background-color: palegreen;
+  width: 100%;
+  display: flex;
+  box-shadow: 1px 1px 5px gray, -1px -1px 5px gray;
+  border-radius: 4%;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* make a rectangular container */
+.project-card::before {
+  content: "";
+  display: block;
+  padding-top: 78%;
+}
+
+.description-container {
+  height: 100%;
+  width: 100%;
+}
+
+.project-description {
+  user-select: none;
+  position: absolute;
+  left: 100%;
+  transition: left 0.5s ease-out;
+  color: white;
+
+  background-color: rgba(55, 55, 55, 0.7);
+  backdrop-filter: blur(2px);
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-description.showed {
+  left: 0;
+  transition: left 0.5 ease-out;
+}
+
+@media (min-width: 75em) {
+  .description-container:hover>* {
+    left: 0;
+    transition: left 0.5 ease-out;
+  }
+}
+
+.project-description .button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.project-description .button:hover {
+  background-color: white;
+  color: black;
+}
+
+#projectsSection .button {
+  margin-bottom: 1em;
+}
+</style>
