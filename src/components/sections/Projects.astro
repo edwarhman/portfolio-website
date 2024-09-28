@@ -6,8 +6,9 @@ const allProjects = await getCollection("projects")
 ---
 
 <Section id='projectsSection'>
+  <div class="projects__container">
       <h2 class="big-font title">My projects</h2>
-      <div class="projects container medium-font">
+      <div class="projects  medium-font">
         {
           allProjects.map((project)=> (
             <ProjectItem project={project} />
@@ -15,9 +16,16 @@ const allProjects = await getCollection("projects")
         }
       </div>
         <a class="button medium-font" href="https://github.com/edwarhman" target="_blank">See more</a>
+  </div>
 </Section>
 <style>
-.projects.container {
+
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects {
   margin-bottom: 3rem;
   margin-top: 3rem;
   display: flex;

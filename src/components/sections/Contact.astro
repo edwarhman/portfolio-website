@@ -3,6 +3,7 @@ import Section from "../Section.astro";
 ---
 
 <Section id="contact-section">
+      <div class="contact__container">
       <h2 class="huge-font title">Let's work together</h2>
       <form action="send:edwarhman@gmail.com" method="post" class="contact-form">
         <button class="button big-font" id="contact-button">Email me</button>
@@ -36,9 +37,18 @@ import Section from "../Section.astro";
           </li>
         </ul>
       </div>
+      </div>
 </Section>
 <style>
 /* contact section */
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 95vh;
+}
 
 @media (min-width: 75em) {
   #contact-section .huge-font {
