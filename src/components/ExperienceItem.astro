@@ -1,12 +1,23 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 export interface Props {
-    
+  experience: CollectionEntry<"experience">
+}
+
+const { experience } = Astro.props
+const startDate = getDisplayDate(experience.startDate)
+const endDate = getDisplayDate(experience.endDate)
+
+function getDisplayDate(dateString: string) {
+  const year = new Date(dateString).getUTCFullYear()
+  const month = new Date(dateString).getMonth()
+  return month + '-' + year
 }
 ---
 <li>
-    <em>2022 - Current</em>
-    <h3>Front-end developer at <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a></h3>
-    <p>I'm a front-end developer at FreeCodeCamp. I'm responsible for creating the website and the mobile app for the platform. I also work on the backend, which is responsible for handling user authentication and data storage.</p>
+  <em>{startDate} - {endDate}</em>
+  <h3> {experience.position} at <a href={experience.companyUrl} target="_blank">{experience.companyName}</a></h3>
+  <p>{experience.details}</p>
 </li>
 
 <style>
@@ -27,5 +38,14 @@ export interface Props {
     height: 2rem;
     border-radius: 50%;
     position: absolute;
+  }
+
+  em {
+    color: #888
+  }
+
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
   }
 </style>

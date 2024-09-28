@@ -1,15 +1,17 @@
 ---
+import { getCollection } from "astro:content";
 import ExperienceItem from "../ExperienceItem.astro";
 import Section from "../Section.astro";
+const allExperience = await getCollection("experience")
+console.log({allExperience})
 ---
 
 <Section id='experience-section'>
       <h2 class="big-font title">Experience</h2>
       <ol>
-        <ExperienceItem />
-        <ExperienceItem />
-        <ExperienceItem />
-        <ExperienceItem />
+    {allExperience.map(({data})=> (
+        <ExperienceItem experience={data} />
+    ))}
       </ol>
       
 </Section>
