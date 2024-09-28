@@ -31,7 +31,12 @@ const { title } = Astro.props;
   --aux-color: gold;
   --bg-color: gray;
   --main-font-color: black;
+  --secondary-font-color: #555;
   --aux-font-color: white;
+  --small-font-size: 1.1rem;
+  --medium-font-size: 2.3rem;
+  --big-font-size: 3.5rem;
+  --huge-font-size: 8rem;
 }
 
 /* base reset */
@@ -126,19 +131,19 @@ button:active {
 
 /* website font sizes */
 .small-font {
-  font-size: 0.85rem;
+  font-size: var(--small-font-size);
 }
 
 .medium-font {
-  font-size: 2.3rem;
+  font-size: var(--medium-font-size);
 }
 
 .big-font {
-  font-size: 3.5rem;
+  font-size: var(--big-font-size);
 }
 
 .huge-font {
-  font-size: 8rem;
+  font-size: var(--huge-font-size);
 }
 
 
