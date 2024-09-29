@@ -1,7 +1,9 @@
 
 <nav id="nav-bar" class="nav">
   <ul class="no-bullet nav__links">
-    <li class="nav-link active"><a href="#welcome-section">about me</a></li>
+    <span class="octagon">
+      <li class="nav-link active"><a href="#welcome-section">about me</a></li>
+    </span>
     <li class="nav-link"><a href="#experience-section">experience</a></li>
     <li class="nav-link"><a href="#projectsSection">projects</a></li>
     <li class="nav-link"><a href="#contact-section">contact</a></li>
@@ -73,7 +75,7 @@ nav {
   background: transparent;
   animation: blur linear both;
   animation-timeline: scroll();
-  animation-range: 0 500px;
+  animation-range: 0 1000px;
 }
 
 @keyframes blur {
@@ -82,7 +84,7 @@ nav {
     0 5px 50px -5px hsla(0, 0, 100%, 0.2),
     0 0 0 1 transparent;
   backdrop-filter: blur(10px);
-  background: rgba(225,225,225, 0.1);
+  background: rgba(225,225,225, 0.05);
 }
 }
 </style>
