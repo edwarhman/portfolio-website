@@ -2,7 +2,7 @@
 title: CV Editor
 details: Edit your CV online and download it as a PDF. No need to install anything. Just open the website and start editing.
 demoUrl: https://cv-edit.vercel.app/
-githubUrl: https://github.com/edwarham/cv-json
+githubUrl: https://github.com/edwarhman/cv-json
 image: /src/assets/project-images/cv-editor.png
 technologies:
   - JavaScript
