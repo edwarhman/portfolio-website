@@ -8,7 +8,7 @@ console.log({allExperience})
 
 <Section id='experience-section'>
   <div class="experience">
-    <h2 class="big-font title">Experience</h2>
+    <h2 class="title">Experience</h2>
     <ol>
       {
         allExperience.map((experience)=> (
@@ -20,12 +20,9 @@ console.log({allExperience})
 </Section>
 
 <style>
-  .experience {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 95vh;
+  h2 {
+    margin-bottom: 2.5rem;
+    text-align: center;
   }
   ol {
     border-left: 5px solid red;
@@ -36,6 +33,7 @@ console.log({allExperience})
   
   @media (min-width: 75em) {
     .experience {
+      display: flex;
       flex-direction: row;
       align-items: center;
       min-height: initial;

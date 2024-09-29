@@ -25,6 +25,7 @@ if(!images[project.data.image]) {
         alt={project.data.title + "project"}
     />
     <div class="details-container">
+        <div>
         <h3>{project.data.title}</h3>
         {
             project.data.technologies.map((tech, index) => {
@@ -34,6 +35,7 @@ if(!images[project.data.image]) {
         <div class="content-container">
             <Content/>
         </div>
+    </div>
         <ul class="project-links">
             <li><a target="_blank" aria-label={project.data.title + ' demo'} href={project.data.demoUrl}><WorldMap width={24} height={24}/></a></li>
             <li><a target="_blank" aria-label={project.data.title + ' source code'} href={project.data.githubUrl}><GitHub width={24} height={24}/></a></li>
@@ -84,14 +86,13 @@ if(!images[project.data.image]) {
 
         .details-container {
             padding: 2rem 2.0rem 0 0; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-links {
-            position: absolute;
-            padding: 2rem 2.5rem;
-            width: 100%;
-            top: 0;
-            right: 0;
+            margin: 0.8rem 0;
         }
     }
 </style>
