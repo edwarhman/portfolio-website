@@ -15,7 +15,7 @@ function getDisplayDate(dateString: string) {
 }
 ---
 <li>
-  <em>{startDate} - {endDate}</em>
+  <em><time datetime={experience.data.startDate}>{startDate}</time> - <time datetime={experience.data.endDate}>{endDate}</time></em>
   <h3> {experience.data.position} at <a href={experience.data.companyUrl} target="_blank">{experience.data.companyName}</a></h3>
   <p>{experience.data.details}</p>
 </li>
