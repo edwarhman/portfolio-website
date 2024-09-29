@@ -14,6 +14,7 @@
   "author": "edwarhman <edwarhman@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@astrojs/vercel": "^7.8.1",
     "astro": "4.15.6",
     "sharp": "^0.33.5"
   },
