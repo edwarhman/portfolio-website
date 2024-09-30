@@ -18,9 +18,12 @@
   top: 0;
   width: 100%;
   user-select: none;
-  background-color: var(--aux-font-color);
+  background: transparent;
   font-weight: bold;
   padding: 1rem 0;
+  animation: noise linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
 }
 
 .nav__links {
@@ -69,22 +72,32 @@
   transition: color 0.15s ease-out;
 }
 
-nav {
-  background: transparent;
-  animation: blur linear both;
-  animation-timeline: scroll();
-  animation-range: 0 500px;
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: transparent;
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 600px;
+  }
+
 }
 
-@keyframes blur {
+@keyframes noise {
   to {
   box-shadow:
     0 5px 50px -5px hsla(0, 0, 100%, 0.2),
     0 0 0 1 transparent;
   backdrop-filter: blur(7px);
-  background:
-    linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.15)),
-    url('/src/assets/noise.svg');
+  background: var(--noisy-bg);
+}
+}
+@keyframes blur {
+  to {
+  box-shadow:
+    0 5px 50px -5px hsla(0, 0, 100%, 0.2),
+    0 0 0 1 transparent;
+  backdrop-filter: blur(12px);
+  background: rgba(225,225,225, 0.1);
 }
 }
 </style>

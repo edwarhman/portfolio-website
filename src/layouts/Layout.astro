@@ -31,7 +31,8 @@ const { title } = Astro.props;
 :root {
   --main-color: #d70000;
   --aux-color: gold;
-  --bg-color: gray;
+  --primary-bg-color: white;
+  --secondary-bg-color: gray;
   --main-font-color: black;
   --secondary-font-color: #555;
   --aux-font-color: white;
@@ -39,7 +40,14 @@ const { title } = Astro.props;
   --medium-font-size: 2.3rem;
   --big-font-size: 3.5rem;
   --huge-font-size: 8rem;
+
+  --noisy-bg: 
+    linear-gradient(rgba(235,235,235,.5), rgba(255,255,255,.15)),
+    url('/src/assets/noise.svg');
+
+  color-scheme: dark light;
 }
+
 
 /* base reset */
 * {
@@ -130,7 +138,6 @@ p {
   text-transform: uppercase;
   font-weight: bold;
   border: 2px solid var(--main-color);
-  background-color: var(--aux-font-color);
 }
 
 .button:hover {
@@ -157,6 +164,23 @@ button:active {
 
 .huge-font {
   font-size: var(--huge-font-size);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: #00e1ff;
+    --aux-color: gold;
+    --main-font-color: white;
+    --primary-bg-color: #111;
+    --secondary-font-color: rgb(254, 240, 138);
+    --aux-font-color: black;
+    background-color: var(--primary-bg-color);
+  }
+
+  strong {
+    color: var(--secondary-font-color);
+  }
+
 }
 
 </style>
