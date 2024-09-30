@@ -1,6 +1,5 @@
 ---
 import Sun from "@/assets/icons/Sun.astro";
-import Dropdown from "./Dropdown.astro";
 import Moon from "@/assets/icons/Moon.astro";
 import System from "@/assets/icons/System.astro";
 ---
@@ -10,24 +9,22 @@ import System from "@/assets/icons/System.astro";
     <li class="nav-link"><a href="#experience-section">experience</a></li>
     <li class="nav-link"><a href="#projectsSection">projects</a></li>
     <li class="nav-link"><a href="#contact-section">contact</a></li>
-    <li class="nav-link">
-      <fieldset>
-        <label>
-          <input type="radio" name="color-scheme" id="color-scheme-light" value="0">
-          <Sun />
-        </label>
-        <label>
-          <input type="radio" name="color-scheme" id="color-scheme-system" value="auto" checked>
-          <System />
-        </label>
-        <label>
-          <input type="radio" name="color-scheme" id="color-scheme-dark" value="1">
-          <Moon />
-        </label>
-      </fieldset>
-    </li>
   </ul>
 </nav>
+<fieldset>
+    <label>
+      <input type="radio" name="color-scheme" id="color-scheme-light" value="0">
+      <Sun />
+    </label>
+    <label>
+      <input type="radio" name="color-scheme" id="color-scheme-system" value="auto" checked>
+      <System />
+    </label>
+    <label>
+      <input type="radio" name="color-scheme" id="color-scheme-dark" value="1">
+      <Moon />
+    </label>
+</fieldset>
 
 <style>
 
@@ -46,17 +43,18 @@ import System from "@/assets/icons/System.astro";
   animation-range: 0 500px;
 }
 
-li:has(fieldset) {
-  display: relative;
-}
-
 fieldset {
   border: none;
-  position: absolute;
-  background: transparent;
+  bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 3rem;
+  position: fixed;
   right: 15px;
-  top: 50%;
-  transform: translateY(-42%);
+  animation: noise linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
 }
 
 fieldset input {
@@ -68,7 +66,7 @@ fieldset label {
   transition: all 0.3s ease-out;
 }
 
-fieldset:hover label {
+fieldset:hover label, fieldset:focus label {
   display: initial;
 }
 
@@ -82,18 +80,7 @@ html:has(input:checked) {
 .nav__links {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
-
-@media (min-width: 25.85em) {
-  .nav__links {
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .nav-link {
-    margin-right: 2.5rem;
-  }
+  justify-content: space-evenly;
 }
 
 .nav-link:not(:has(fieldset)) {
@@ -104,7 +91,7 @@ html:has(input:checked) {
   transition: color 0.3s ease-out;
 }
 
-.nav-link:not(:has(fieldset)):before {
+.nav-link:before {
   content: "";
   position: absolute;
   border-bottom: 3px solid var(--main-color);
@@ -127,7 +114,7 @@ html:has(input:checked) {
 
 @media (prefers-color-scheme: dark) {
   @container root style(--systemtheme: 1) {
-    .nav {
+    .nav, fieldset {
       background: transparent;
       animation: blur linear both;
       animation-timeline: scroll();
@@ -137,7 +124,7 @@ html:has(input:checked) {
 }
 
 @container root style(--darkmode: 1) {
-  .nav {
+  .nav, fieldset {
     background: transparent;
     animation: blur linear both;
     animation-timeline: scroll();
@@ -163,5 +150,26 @@ html:has(input:checked) {
   backdrop-filter: blur(12px);
   background: rgba(225,225,225, 0.1);
 }
+}
+
+@media (min-width: 25.85em) {
+  .nav__links {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    margin-right: 2.5rem;
+  }
+  fieldset {
+    padding: 0.2rem 0.8rem;
+    top: 11px;
+    z-index: 2000;
+    height: fit-content;
+    flex-direction: row;
+    gap : 1rem;
+    animation: none;
+    background: transparent;
+  }
 }
 </style>
