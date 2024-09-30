@@ -11,6 +11,12 @@ importers:
       '@astrojs/vercel':
         specifier: ^7.8.1
         version: 7.8.1(astro@4.15.6(rollup@4.21.3)(typescript@5.6.2))
+      '@fontsource-variable/oswald':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/didact-gothic':
+        specifier: ^5.1.0
+        version: 5.1.0
       astro:
         specifier: 4.15.6
         version: 4.15.6(rollup@4.21.3)(typescript@5.6.2)
@@ -294,6 +300,12 @@ packages:
   '@eslint/eslintrc@1.4.1':
     resolution: {integrity: sha512-XXrH9Uarn0stsyldqDYq8r++mROmWRI1xKMXa640Bb//SY1+ECYX6VzT6Lcx5frD0V30XieqJ0oX9I2Xj5aoMA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fontsource-variable/oswald@5.1.0':
+    resolution: {integrity: sha512-ZjvLLcT/5HKb3eZDruWyFxIUy9Pg5hV7yu7WTmBrEhVnS6xRMNzY4Zw7ir+x/6xZWeeYkyqff8HGapcn2EUcsw==}
+
+  '@fontsource/didact-gothic@5.1.0':
+    resolution: {integrity: sha512-A7zauKOWEtEIzNT83de8opiRiT/xZW1Xfey54PoVtWvoG6ZcRv37nkwh1f9urrpsA+38uahEpiOCJeohZf14ZQ==}
 
   '@humanwhocodes/config-array@0.9.5':
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
@@ -2419,6 +2431,10 @@ snapshots:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+
+  '@fontsource-variable/oswald@5.1.0': {}
+
+  '@fontsource/didact-gothic@5.1.0': {}
 
   '@humanwhocodes/config-array@0.9.5':
     dependencies:

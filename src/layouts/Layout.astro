@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/oswald'
+import '@fontsource/didact-gothic'
 interface Props {
 	title: string;
 }
@@ -54,7 +56,7 @@ const { title } = Astro.props;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 65.5%;
   /* 10px */
   scroll-behavior: smooth;
 }
@@ -82,12 +84,16 @@ html {
 }
 
 body {
-  font-family: "ubuntu condensed", sans-serif;
+  font-family: 'Didact Gothic', sans-serif;
   font-size: 1.8rem;
   color: var(--main-font-color);
   max-width: 900px;
   padding: 0 1rem;
   margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6, .nav-link, .button {
+  font-family: 'Oswald Variable', sans-serif;
 }
 
 a {
@@ -97,11 +103,6 @@ a {
 
 strong {
   color: var(--main-color);
-}
-
-h2 {
-  font-size: var(--medium-font-size);
-  text-transform: uppercase;
 }
 
 p {
@@ -119,16 +120,20 @@ p {
   list-style: none;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .button {
   cursor: pointer;
-  padding: 1rem;
+  padding: 1.15rem 1rem ;
   text-transform: uppercase;
   font-weight: bold;
   border: 2px solid var(--main-color);
   background-color: var(--aux-font-color);
 }
 
-button:hover {
+.button:hover {
   color: var(--main-color);
 }
 
@@ -153,6 +158,5 @@ button:active {
 .huge-font {
   font-size: var(--huge-font-size);
 }
-
 
 </style>

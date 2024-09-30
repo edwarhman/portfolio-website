@@ -16,7 +16,7 @@ function getDisplayDate(dateString: string) {
 ---
 <li>
   <em><time datetime={experience.data.startDate}>{startDate}</time> - <time datetime={experience.data.endDate}>{endDate}</time></em>
-  <h3> {experience.data.position} at <a href={experience.data.companyUrl} target="_blank">{experience.data.companyName}</a></h3>
+  <h3><span class="uppercas">{experience.data.position}</span> at <a href={experience.data.companyUrl} target="_blank">{experience.data.companyName}</a></h3>
   <p>{experience.data.details}</p>
 </li>
 
@@ -46,5 +46,11 @@ function getDisplayDate(dateString: string) {
   h3 {
     margin-top: 1rem;
     margin-bottom: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: var(--main-color);
+    text-transform: none;
   }
 </style>
