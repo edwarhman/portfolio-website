@@ -18,7 +18,7 @@ import Experience from '@/components/sections/Experience.astro';
 		const projectsCards = Array.from(document.querySelectorAll(".project-card"));
 		const sections = Array.from(document.querySelectorAll(".main-section"));
 
-		function isElementInRange(el, strict, top, bottom, left, right) {
+		function isElementInRange(el, strict, top, bottom, left = undefined, right = undefined) {
 		const rect = el.getBoundingClientRect();
 		if (strict) {
 			return (

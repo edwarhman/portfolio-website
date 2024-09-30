@@ -1,0 +1,25 @@
+<div class="dropdown">
+    <span><slot name="trigger" /></span>
+    <div class="dropdown-content">
+        <slot />
+    </div>
+</div> 
+
+ <style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+.dropdown-content {
+  /* display: none; */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>

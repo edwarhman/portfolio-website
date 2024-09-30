@@ -56,8 +56,10 @@ function getDisplayDate(dateString: string) {
   }
 
   @media (prefers-color-scheme: dark) {
-    em {
-      color: var(--primary-font-color);
+    @container root style(--systemtheme: 1) {
+      em {
+        color: var(--primary-font-color);
+      }
     }
   }
 </style>

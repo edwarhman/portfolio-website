@@ -1,16 +1,36 @@
-
+---
+import Sun from "@/assets/icons/Sun.astro";
+import Dropdown from "./Dropdown.astro";
+import Moon from "@/assets/icons/Moon.astro";
+import System from "@/assets/icons/System.astro";
+---
 <nav id="nav-bar" class="nav">
   <ul class="no-bullet nav__links">
     <li class="nav-link active"><a href="#welcome-section">about me</a></li>
     <li class="nav-link"><a href="#experience-section">experience</a></li>
     <li class="nav-link"><a href="#projectsSection">projects</a></li>
     <li class="nav-link"><a href="#contact-section">contact</a></li>
+    <li class="nav-link">
+      <fieldset>
+        <label>
+          <input type="radio" name="color-scheme" id="color-scheme-light" value="0">
+          <Sun />
+        </label>
+        <label>
+          <input type="radio" name="color-scheme" id="color-scheme-system" value="auto" checked>
+          <System />
+        </label>
+        <label>
+          <input type="radio" name="color-scheme" id="color-scheme-dark" value="1">
+          <Moon />
+        </label>
+      </fieldset>
+    </li>
   </ul>
 </nav>
 
 <style>
 
-/* nav-bar styles */
 .nav {
   position: fixed;
   z-index: 100;
@@ -26,6 +46,39 @@
   animation-range: 0 500px;
 }
 
+li:has(fieldset) {
+  display: relative;
+}
+
+fieldset {
+  border: none;
+  position: absolute;
+  background: transparent;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-42%);
+}
+
+fieldset input {
+  display: none;
+}
+
+fieldset label {
+  display: none;
+  transition: all 0.3s ease-out;
+}
+
+fieldset:hover label {
+  display: initial;
+}
+
+fieldset label:has(input:checked) {
+  display: initial;
+}
+
+html:has(input:checked) {
+  color: yellow !important;
+}
 .nav__links {
   display: flex;
   align-items: center;
@@ -43,7 +96,7 @@
   }
 }
 
-.nav-link {
+.nav-link:not(:has(fieldset)) {
   line-height: 2em;
   text-transform: uppercase;
   position: relative;
@@ -51,7 +104,7 @@
   transition: color 0.3s ease-out;
 }
 
-.nav-link::before {
+.nav-link:not(:has(fieldset)):before {
   content: "";
   position: absolute;
   border-bottom: 3px solid var(--main-color);
@@ -73,6 +126,17 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  @container root style(--systemtheme: 1) {
+    .nav {
+      background: transparent;
+      animation: blur linear both;
+      animation-timeline: scroll();
+      animation-range: 0 600px;
+    }
+  }
+}
+
+@container root style(--darkmode: 1) {
   .nav {
     background: transparent;
     animation: blur linear both;
