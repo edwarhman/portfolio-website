@@ -1,5 +1,7 @@
 ---
+import GitHub from "@/assets/icons/GitHub.astro";
 import Section from "../Section.astro";
+import LinkedIn from "@/assets/icons/LinkedIn.astro";
 ---
 
 <Section id="contact-section">
@@ -14,16 +16,18 @@ import Section from "../Section.astro";
               href="https://www.linkedin.com/in/emersonwarhman/"
               target="_blank"
               aria-label="LinkedIn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
+              >
+              <LinkedIn width={32} height={32} />
+            </a>
           </li>
           <li>
             <a
               href="https://github.com/edwarhman"
               target="_blank"
               aria-label="GitHub"
-              ><i class="fab fa-github"></i
-            ></a>
+              >
+              <GitHub width={32} height={32} />
+            </a>
           </li>
         </ul>
       </div>
@@ -63,7 +67,7 @@ import Section from "../Section.astro";
   margin-top: 2rem;
 }
 
-.fab:hover {
+a:hover {
   color: var(--main-color);
 }
 
