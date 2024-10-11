@@ -35,7 +35,8 @@ const { title } = Astro.props;
   --small-font-size: 1.1rem;
   --medium-font-size: 2.3rem;
   --big-font-size: 3.5rem;
-  --huge-font-size: 8rem;
+  --huge-font-size: 5rem;
+  --extra-huge-font-size: 8rem;
   --systemtheme: 0;
   --darkmode: 0;
   container-name: root;
@@ -169,6 +170,10 @@ button:active {
 
 .huge-font {
   font-size: var(--huge-font-size);
+}
+
+.extra-huge-font {
+  font-size: var(--extra-huge-font-size);
 }
 
 @media (prefers-color-scheme: dark) {
