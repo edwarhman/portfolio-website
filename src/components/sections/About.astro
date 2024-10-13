@@ -10,7 +10,7 @@ import meImage from "../../assets/me.jpg";
       <Image src={meImage} alt="Emerson Warhman" width="400" height="400" class="rounded-full" />
       <div class="description">
         <h1 class="huge-font uppercase">Hi! My name is Emerson Warhman</h1>
-<p class="mediu-font">I'm a Fullstack Web Developer with over <strong>2 years of experience</strong> in the industry. I'm currently working as a Frontend Developer at <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.</p>
+        <p class="mediu-font">I'm a Fullstack Web Developer with over <strong>2 years of experience</strong> in the industry. I'm currently working as a Frontend Developer at <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.</p>
         <p class="mediu-font">I've been working with Astro for a while now and I'm really enjoying it. I'm also a big fan of CSS and I love to learn new things.</p>
       </div>
     </div>
@@ -38,19 +38,14 @@ import meImage from "../../assets/me.jpg";
 img {
   width: 240px;
   height: 240px;
-  clip-path: polygon(75% 0%, 95% 60%, 30% 100%, 5% 12%);
-  shape-outside: polygon(75% 0%, 95% 60%, 30% 100%, 5% 12%);
-  shape-margin: 30px;
+  clip-path: polygon(29% 0, 69% 0, 94% 29%, 91% 77%, 48% 100%, 8% 76%, 5% 30%);
+  shape-outside: polygon(29% 0, 69% 0, 94% 29%, 91% 77%, 48% 100%, 8% 76%, 5% 30%);
   margin-bottom: 1rem;
 }
 
 h1 {
   text-wrap: balance;
   margin-bottom: 2.5rem;
-}
-
-p {
-  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -61,8 +56,11 @@ p {
 
   img {
     float: right;
+    shape-margin: 18px;
     width: 350px;
     height: 350px;
+    margin-bottom: 0;
+    margin-top: 1rem;
   }
 
   h1 {
