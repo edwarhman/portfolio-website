@@ -12,13 +12,12 @@
   - [x] cambiar contenedores de proyectos por articles
   - [x] que cada proyecto tenga un link a su repo y sitio web
   - [x] tecnologias usadas en cada proyecto
-  - [] cambiar layout articulos
+  - [x] cambiar layout articulos
 - [x] añadir sección de experiencia
 - [] about
-  - [] agregar foto de perfil
-  - [] agregar bio
+  - [x] agregar foto de perfil
+  - [x] agregar bio
 - [] contact
   - [] agregar formulario de contacto
   - [] agregar botón de enviar mensaje
 - [] footer
-
